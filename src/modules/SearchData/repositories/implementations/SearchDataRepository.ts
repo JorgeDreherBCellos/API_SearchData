@@ -1,7 +1,6 @@
 import { SearchData } from '../../model/SearchData';
 import { ISearchDataRepository } from '../ISearchDataRepository';
-import { db } from '../../../../database/db';
-import knex from 'knex';
+import knex from '../../../../database/db';
 
   export class SearchDataRepository implements ISearchDataRepository {
   private static INSTANCE: SearchDataRepository;
@@ -14,8 +13,8 @@ import knex from 'knex';
     return SearchDataRepository.INSTANCE;
   }
   //list(): SearchData[] {
-  async list(): Promise<searchdt[]>{
-    const allData: any[] = await knex.raw('SELECT DISTINCT  
+  async list(): Promise<searchData[]>{
+    const allData: any[] = await knex.raw(`SELECT DISTINCT  
     To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'RRRR-MM-DD') COMP,
     To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'MM') MES,
     To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'RRRR') ANO,
@@ -86,12 +85,29 @@ import knex from 'knex';
     OR (CASE WHEN To_Char(cd_contabil_credito) IS NULL THEN To_Char(cd_contabil_debito) ELSE To_Char(cd_contabil_credito) END) LIKE '5%'
     OR (CASE WHEN To_Char(cd_contabil_credito) IS NULL THEN To_Char(cd_contabil_debito) ELSE To_Char(cd_contabil_credito) END) LIKE '6%'
     OR (CASE WHEN To_Char(cd_contabil_credito) IS NULL THEN To_Char(cd_contabil_debito) ELSE To_Char(cd_contabil_credito) END) LIKE '7%')
-    ')
+    `);
 
-    const searchData: Searchdt[] = allData.map({
-      
+    const searchDatas: SearchData[] = allData.map(searchdt => ({
+
+     comp: searchdt.DT_LANCAMENTO,
+     mes: searchdt.DT_LANCAMENTO,
+     ano: searchdt.DT_LANCAMENTO,
+     data: searchdt.DT_LANCAMENTO,
+     desc_conta: searchdt.DESC_CONTA,
+     doc: searchdt.DOC,
+     cod_conta:
+     valor:
+     natureza:
+     his:
+     cod_cc:
+     desc_cc:
+     rateio:
+     cod_unid:
+     cd_setor_credito:
+     cd_setor_debito:
+     cd_lancamento:
     })
-  }
+  )}
 
 }
 

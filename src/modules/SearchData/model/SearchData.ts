@@ -2,7 +2,7 @@ import { v4 as uuidV4 } from 'uuid';
 
 class SearchData {
 
-  id: string;
+  id?: string;
   comp: Date;
   mes: number;
   ano: number;
