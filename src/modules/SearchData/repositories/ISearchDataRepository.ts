@@ -1,7 +1,7 @@
 import { SearchData } from "../model/SearchData";
 
 interface ISearchDataRepository {
-  list(): SearchData[];
+  list(): Promise<SearchData[]>;
 }
 
 export { ISearchDataRepository }

@@ -13,7 +13,7 @@ import knex from '../../../../database/db';
     return SearchDataRepository.INSTANCE;
   }
   //list(): SearchData[] {
-  async list(): Promise<searchData[]>{
+  async list(): Promise<SearchData[]> {
     const allData: any[] = await knex.raw(`SELECT DISTINCT  
     To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'RRRR-MM-DD') COMP,
     To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'MM') MES,
@@ -95,20 +95,21 @@ import knex from '../../../../database/db';
      data: searchdt.DT_LANCAMENTO,
      desc_conta: searchdt.DESC_CONTA,
      doc: searchdt.DOC,
-     cod_conta:
-     valor:
-     natureza:
-     his:
-     cod_cc:
-     desc_cc:
-     rateio:
-     cod_unid:
-     cd_setor_credito:
-     cd_setor_debito:
-     cd_lancamento:
+     cod_conta: searchdt.COD_CONTA,
+     valor: searchdt.VALOR,
+     natureza: searchdt.NATUREZA,
+     his: searchdt.HIS,
+     cod_cc: searchdt.COD_CC,
+     desc_cc: searchdt.DESC_CC,
+     rateio: searchdt.RATEIO,
+     cod_unid: searchdt.COD_UNID,
+     cd_setor_credito: searchdt.CD_SETOR_CREDITO,
+     cd_setor_debito: searchdt.CD_SETOR_DEBITO,
+     cd_lancamento: searchdt.CD_LANCAMENTO
     })
-  )}
-
+  )
+  return searchDatas;
+  }
 }
 
 /* try {
