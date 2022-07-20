@@ -1,4 +1,5 @@
-/*import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
+
 // AUTENTICAÇÃO
 function authentication(req: Request, res: Response, next: NextFunction) {
   const authheader = req.headers.authorization;
@@ -13,7 +14,7 @@ function authentication(req: Request, res: Response, next: NextFunction) {
   const user = auth[0];
   const pass = auth[1];
 
-  if (user == 'admin' && pass == '123') {
+  if (user == 'mvintegra' && pass == 'mvintegra') {
 
     next();
   } else {
@@ -21,4 +22,4 @@ function authentication(req: Request, res: Response, next: NextFunction) {
   }
 }
 
-export { authentication }*/
+export { authentication }
