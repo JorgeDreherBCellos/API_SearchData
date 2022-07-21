@@ -1,10 +1,10 @@
 import { SearchData } from '../../model/SearchData';
-import { ISearchDataRepository } from '../../repositories/ISearchDataRepository';
+import { ISearchDatasRepository } from '../../repositories/ISearchDatasRepository';
 
 type TListSearchDataUseCase = { data: SearchData[] };
 
 class ListSearchDataUseCase {
-  constructor(private searchDatasRepository: ISearchDataRepository) {}
+  constructor(private searchDatasRepository: ISearchDatasRepository) { }
 
   async execute(): Promise<TListSearchDataUseCase> {
     const searchDatas = await this.searchDatasRepository.list();

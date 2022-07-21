@@ -7,7 +7,7 @@ const router = Router();
 
 router.use(authentication)
 
-router.use('/api/v1/searchdata', searchDataRoutes);
+router.use('/api/v1/', searchDataRoutes);
 
 
 export { router };

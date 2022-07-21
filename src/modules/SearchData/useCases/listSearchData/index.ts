@@ -1,4 +1,4 @@
-import { SearchDataRepository } from "../../repositories/implementations/SearchDataRepository";
+import { SearchDataRepository } from "../../repositories/implementations/SearchDatasRepository";
 import { ListSearchDataController } from "./ListSearchDataController";
 import { ListSearchDataUseCase } from "./ListSearchDataUseCase";
 

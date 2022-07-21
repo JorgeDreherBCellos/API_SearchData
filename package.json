@@ -10,13 +10,14 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.1",
-    "knex": "^1.0.2",
-    "oracledb": "^5.4.0",
+    "knex": "^0.21.1",
+    "oracledb": "^5.3.0",
+    "pg": "^8.0.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.12",
-    "@types/oracledb": "^5.2.3",
+    "@types/oracledb": "^5.2.2",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",

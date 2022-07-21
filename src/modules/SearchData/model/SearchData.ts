@@ -1,7 +1,6 @@
 import { v4 as uuidV4 } from 'uuid';
 
 class SearchData {
-
   id?: string;
   comp: Date;
   mes: number;
@@ -20,7 +19,7 @@ class SearchData {
   cd_setor_credito: number;
   cd_setor_debito: number;
   cd_lancamento: number;
-  
+
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
