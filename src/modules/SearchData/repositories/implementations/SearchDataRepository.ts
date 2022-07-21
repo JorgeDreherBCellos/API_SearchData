@@ -76,7 +76,7 @@ import knex from '../../../../database/db';
     imv_contabil.cd_lancamento             
     FROM mvintegra.imv_contabil
     LEFT JOIN dbamv.lcto_Setor ON lcto_Setor.cd_lcto_contabil = imv_contabil.cd_lancamento
-    WHERE tp_registro = '003'
+    WHERE tp_registro = '003' and rownum < 5
     AND cd_lote = 199358  --199358
     --AND To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'RRRR') = '2022' 
     --AND To_char(To_Date(dt_lancamento, 'DD/MM/RRRR'), 'MM') = '03'
