@@ -1,11 +1,11 @@
 import { SearchData } from '../../model/SearchData';
-import { ISearchDataRepository } from '../ISearchDataRepository';
+import { ISearchDatasRepository } from '../ISearchDatasRepository';
 import knex from '../../../../database/db';
 
-  export class SearchDataRepository implements ISearchDataRepository {
+export class SearchDataRepository implements ISearchDatasRepository {
   private static INSTANCE: SearchDataRepository;
 
-  private constructor() {}
+  private constructor() { }
   public static getInstance(): SearchDataRepository {
     if (!SearchDataRepository.INSTANCE) {
       SearchDataRepository.INSTANCE = new SearchDataRepository();
@@ -89,34 +89,34 @@ import knex from '../../../../database/db';
 
     const searchDatas: SearchData[] = allData.map(searchdt => ({
 
-     comp: searchdt.DT_LANCAMENTO,
-     mes: searchdt.DT_LANCAMENTO,
-     ano: searchdt.DT_LANCAMENTO,
-     data: searchdt.DT_LANCAMENTO,
-     desc_conta: searchdt.DESC_CONTA,
-     doc: searchdt.DOC,
-     cod_conta: searchdt.COD_CONTA,
-     valor: searchdt.VALOR,
-     natureza: searchdt.NATUREZA,
-     his: searchdt.HIS,
-     cod_cc: searchdt.COD_CC,
-     desc_cc: searchdt.DESC_CC,
-     rateio: searchdt.RATEIO,
-     cod_unid: searchdt.COD_UNID,
-     cd_setor_credito: searchdt.CD_SETOR_CREDITO,
-     cd_setor_debito: searchdt.CD_SETOR_DEBITO,
-     cd_lancamento: searchdt.CD_LANCAMENTO
+      comp: searchdt.DT_LANCAMENTO,
+      mes: searchdt.DT_LANCAMENTO,
+      ano: searchdt.DT_LANCAMENTO,
+      data: searchdt.DT_LANCAMENTO,
+      desc_conta: searchdt.DESC_CONTA,
+      doc: searchdt.DOC,
+      cod_conta: searchdt.COD_CONTA,
+      valor: searchdt.VALOR,
+      natureza: searchdt.NATUREZA,
+      his: searchdt.HIS,
+      cod_cc: searchdt.COD_CC,
+      desc_cc: searchdt.DESC_CC,
+      rateio: searchdt.RATEIO,
+      cod_unid: searchdt.COD_UNID,
+      cd_setor_credito: searchdt.CD_SETOR_CREDITO,
+      cd_setor_debito: searchdt.CD_SETOR_DEBITO,
+      cd_lancamento: searchdt.CD_LANCAMENTO
     })
-  )
-  return searchDatas;
+    );
+    return searchDatas;
   }
 }
 
-/* try {
-  const searchData: SearchData[] = db("mvintegra").select("*")
-     
-  return searchData
-  } catch (error){
-    throw new Error("Mensagem descrevendo o erro que ocorreu");
-}*/
+// try {
+//   const searchData: SearchData[] = db("mvintegra").select("*")
+
+//   return searchDatas
+//   } catch (error){
+//     throw new Error("Mensagem descrevendo o erro que ocorreu");
+// }
 // export { SearchDataRepository }
